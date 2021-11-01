@@ -8,12 +8,12 @@
 
 ## Overview
 ### Description
-RehApp (pronounced like Rehab) is an application where students may voice their problems and concerns about their mental well-being. Here, doctors and experts trained to identify and help people with mental illnesses can help students with their problems, provide advice, and potentially find a solution or a healthy option for the student. The users will be able to vent or voice their concerns by creating either a private or public post. The public feed can be seen by anyone with an account, while the private feed can only be seen by the creator, doctors, and selected friends that are given the permission to view it. There will be categories to which the user can label their posts under. Users are free to comment under different posts, chat with each other, and add other users as their friends as well. This application is geared towards students struggling with their mental health.
+RehApp (pronounced like Rehab) is an application where students may voice their problems and concerns about their mental well-being. Here, doctors and experts trained to identify and help people with mental illnesses can help students with their problems, provide advice, and potentially find a solution or a healthy option for the student. The users will be able to vent or voice their concerns by creating either a private or public post. The public feed can be seen by anyone with an account, while the private feed can only be seen by the creator and trained professionals. There will be categories to which the user can label their posts under. Users are free to comment under different posts. This application is geared towards students struggling with their mental health.
 
 ### App Evaluation
 - **Category:** Mental wellness
 - **Mobile:** This app would be primarily developed for mobile but would perhaps be just as viable on a computer, such as Reddit or other similar apps. Functionality wouldn't be limited to mobile devices, however mobile versions could potentially have more features.
-- **Story:** This application would allow users to post about mental issues that they are dealing with, and allow trained professionals to comment and provide advice and potential solutions for them. The user can also message other users, comment on public posts, and befriend other users if they choose to.
+- **Story:** This application would allow users to post about mental issues that they are dealing with, and allow trained professionals to comment and provide advice and potential solutions for them. The user can also message other users and comment on public posts.
 - **Market:** This application is geared towards High School and College students. If the user is under 18, their age will be displayed on their profile.
 - **Habit:** This app could be used as often as the user wanted depending on how much they would like to seek help, and how much they would like to interact with their friends on the application or view posts that they could potentially relate to and provide their own advice.
 - **Scope:** First, we would start with just allowing any student to create an account, and this could potentially evolve into being implemented at different schools and universities.
@@ -28,7 +28,7 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
 * Users can comments on other posts that they are able to view
 * Provide a way for the user to edit their profile
 * Profile pages for each user
-* User logs in to view posts, access previous chats, and view profile info
+* User logs in to view posts, access previous posts, and view profile info
 * Able to store their posts and information as well as being able to access it
 
 **Optional Nice-to-have Stories**
@@ -47,7 +47,7 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
 * **Streaming**
     * **Private Tab**
         * Can scroll through a list of posts that are made for a select few to see(Professional experts, post author, friends)
-        * Can also create a private post in where the user chooses a select few to see
+        * Can also create a private post
     * **Public tab**
         * Can scroll through a list of posts that are made for the public to see
        * Can also create a public post in where the user allows everyone to see
@@ -69,10 +69,8 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
 **Tab Navigation** (Tab to Screen)
 
 * Public Feed
-* Private Feed
 * Profile
 * Notifications
-* Chat Function
 
 **Flow Navigation** (Screen to Screen)
 
@@ -82,7 +80,7 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
 * Public Feed
    -> Create Public post(Creation)
    -> Detailed post(Upon Clicking a post)
-* Private Feed
+* Private Post
     -> Create Private post(Creation)
     -> Detailed post(Upon Clicking a post)
 * Profile
@@ -91,17 +89,9 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
     -> View profile info (if on personal profile)
 * Profile Info
     -> Add and edit information for profile
-    -> View settings, friends list, and other info
-    -> Show/Hide page where user can choose what is shown on profile and what is hidden from public
-* Friend list
-    -> Send or accept new friend requests
-    -> View and search for current friends
+    -> View settings
 * Notifications
     -> View post after clicking a specific notification
-* Chat
-    -> View chat history
-    -> Detailed chat (view individual chats)
-    -> Create a new chat
 
 ## Wireframes
 
