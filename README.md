@@ -102,3 +102,44 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
 
 ### [BONUS] Interactive Prototype
 
+## Schema 
+### Models
+#### Post
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectID      | String   | unique id for the user post |
+   | author        | Pointer to User| Post author |
+   | urgencyRating | Number     | The rating of how urgent the post is |
+   | text       | String   | Post created by author |
+   | comments | Pointer to Comment   | Comments posted under a post |
+   | category   | String   | The category of the post |
+   | commentsCount     | Number | Number of comments under a post |
+   | timestamp     | DateTime | Date when post is created |
+   
+   #### User
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | username      | String   | Unique id for the user |
+   | firstName        | String | First name of user |
+   | lastName         | String     | Last name of user |
+   | image       | File   | Profile picture |
+   | email | String   | Email of user |
+   | password    | String   | Password of user |
+   | college     | String | College/University of user |
+   | birthday     | String | Birthday of user |
+   
+   #### Comment
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectID      | String   | Unique id for the user’s comment |
+   | message        | String | The text of comment |
+   | timestamp         | DateTime     | Date when user posted the comment |
+   | author       | String   | Author of the comment |
+   | postID | String   | The id of the post that the user commented on |
+   
+### Networking
+#### List of network requests by screen
+
