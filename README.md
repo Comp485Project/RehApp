@@ -100,6 +100,15 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
 
 ### [BONUS] Digital Wireframes & Mockups
 
+<img src="./AuthView.png" width=600>
+<br>
+<img src="./HomeView.png" width=600>
+<br>
+<img src="./ProfileView.png" width=600>
+<br>
+<img src="./AllScreens.png" width=600>
+<br>
+
 ### [BONUS] Interactive Prototype
 
 ## Schema 
