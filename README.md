@@ -141,5 +141,149 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
    | postID | String   | The id of the post that the user commented on |
    
 ### Networking
+- Login Screen
+    - (Read/Get) Retrieve existing user
+    ```
+    if(ParseUser.getCurrentUser() != null){
+            goMainActivity();
+    }
+    private void loginUser(String un, String pw){
+        ParseUser.logInInBackground(un, pw, new LogInCallback() {
+            @Override
+            public void done(ParseUser user, ParseException e) {
+                if(e!=null){
+                    //error handling
+                }
+                goMainActivity();
+            }
+     });
+    }
+    ```
+- Registration Screen
+    - (Get/Read)Query all posts by author
+    ```
+    protected void queryPosts() {
+        ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
+        query.include(Post.KEY_USER);
+        query.addDescendingOrder(Post.CREATED_KEY);
+        query.findInBackground(new FindCallback<Post>() {
+            @Override
+            public void done(List<Post> posts, ParseException e) {
+                if(e!=null){
+                   //error handling
+                }
+                //saved successfully
+        //save all posts
+                allPosts.addAll(posts);
+                adapter.notifyDataSetChanged();
+            }
+        });
+    }
+    ```
+    - (Post/Create)Create a new comment on the post
+    ```
+    let newComment = new Comment();
+    newComment.setMessage(msg);
+    newComment.setAuthor(userFirstName + userLastName);
+    newComment.saveInBackground(new SaveCallBack(){
+    @Override
+        public void done(ParseException e) {
+        if(e!=null){
+            //error handling
+        }
+        //saved successfully
+        //more additional code
+    }
+    });
+    ```
+    - (Delete)Delete Existing comment
+- Create Post Screen
+    - (Create/Post)Create a new post object
+    ```
+    private void savePost(String description, ParseUser currentUser, File photoFile) {
+        Post post = new Post();
+        post.setKeyDescription(description);
+        post.setImage(new ParseFile(photoFile));
+        post.setUser(currentUser);
+        post.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if(e != null){
+                    Log.e(TAG, "Error while saving", e);
+                    Toast.makeText(getContext(), "Error while saving", Toast.LENGTH_SHORT).show();
+                }
+                Log.i(TAG, "Saved successfully");
+                Toast.makeText(getContext(), "Saved successfully", Toast.LENGTH_SHORT).show();
+                descripton.setText("");
+                img.setImageResource(0);
+            }
+        });
+    }
+    ```
+- Detailed Post Screen
+    - (Read/Get)Retrieve existing post details
+    ```
+    let newDetailedPost = new Post();
+    newDetailedPost.include(Post.AUTHOR);
+    newDetailedPost.include(Post.URGENCY);
+    newDetailedPost.include(Post.TEXT);
+    newDetailedPost.include(Post.CATEGORY);
+    newDetailedPost.include(Post.COMMENTS);
+    newDetailedPost.include(Post.COMMENTSCOUNT);
+    newDetailedPost.include(Post.CREATE_KEY);
+    
+    newDetailedPost.findInBackground(new FindCallback(Post){
+    //error handling
+
+    //success
+    });
+    ```
+- Personal Profile Screen
+    - (Read/Get)Get the current users profile screen
+    ```
+    let profile = new User();
+    profile.include(currentUser);
+    profile.include(currentUser.FIRSTNAME);
+    profile.include(currentUser.LASTNAME);
+    profile.include(currentUser.IMAGE);
+    profile.include(currentUser.COLLEGE);
+    profile.include(currentUser.BIOGRAPHY);
+    
+    profile.findINBackground(new FindCallback(){
+        //error handling
+        //on success
+    });
+    ```
+    - (Read/Get)Get the current users post history
+    ```
+    profile.include(currentUser.POSTS);
+    //iterate through all posts
+    //display all posts
+    ```
+- Other User’s Profile Screen
+    - (Read/Get)Get the selected users profile screen
+    ```
+    let profile = new User();
+    profile.include(user.USERNAME);
+    profile.include(user.FIRSTNAME);
+    profile.include(user.LASTNAME);
+    profile.include(user.IMAGE);
+    profile.include(user.COLLEGE);
+    profile.include(user.BIOGRAPHY);
+    
+    profile.findINBackground(new FindCallback(){
+        //error handling
+        //on success
+    });
+    ```
+    - (Read/Get)Get the selected users public post history
+    ```
+    profile.include(User.POSTS);
+    //iterate through all posts
+    //display all posts
+    ```
+- Settings Screen
+    - (Update/PUT)Update existing users information
+
 #### List of network requests by screen
 
