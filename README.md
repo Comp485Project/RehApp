@@ -141,6 +141,8 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
    | postID | String   | The id of the post that the user commented on |
    
 ### Networking
+
+#### List of network requests by screen
 - Login Screen
     - (Read/Get) Retrieve existing user
     ```
@@ -284,6 +286,3 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
     ```
 - Settings Screen
     - (Update/PUT)Update existing users information
-
-#### List of network requests by screen
-
