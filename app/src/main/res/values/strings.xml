@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">485GroupProject</string>
+    <string name="app_name">RehApp</string>
     <string-array name="postOptions">
         <item>Public</item>
         <item>Private</item>
