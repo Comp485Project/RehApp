@@ -7,7 +7,7 @@
     tools:context=".SignUpActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/signInButton"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_marginBottom="100dp"
@@ -95,8 +95,18 @@
         android:layout_marginTop="72dp"
         android:layout_marginBottom="5dp"
         android:text="Already a Member?"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/signInButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signUpButton" />
+
+    <Button
+        android:id="@+id/selectImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="Select Image"
+        app:layout_constraintBottom_toBottomOf="@+id/profileImageView"
+        app:layout_constraintStart_toEndOf="@+id/profileImageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
