@@ -19,18 +19,22 @@ public class SignInActivity extends AppCompatActivity {
     public static final String TAG = "SignInActivity";
     private EditText username;
     private EditText password;
-    private Button btnSignIn;
+    private Button forgotButton;
+    private Button signInButton;
+    private Button signUpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
-        btnSignIn = findViewById(R.id.btnSignIn);
+        username = findViewById(R.id.emailTextField);
+        password = findViewById(R.id.passwordTextField);
+        forgotButton = findViewById(R.id.forgotButton);
+        signInButton = findViewById(R.id.btnSignIn);
+        signUpButton = findViewById(R.id.btnSignUp);
 
-        btnSignIn.setOnClickListener(new View.OnClickListener() {
+        signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "onClick signIn button");
@@ -40,6 +44,20 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignInActivity.this,SignUpActivity.class));
+
+            }
+        });
+
+        forgotButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignInActivity.this,ForgotPasswordActivity.class));
+            }
+        });
     }
 
     private void signInUser(String username, String password) {
