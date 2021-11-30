@@ -40,8 +40,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                                 }
                             }
                         });
-                    }
-                 });
+            }
+        });
 
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
