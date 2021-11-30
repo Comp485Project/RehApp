@@ -297,11 +297,11 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
     - (Update/PUT)Update existing users information
 
 ## Progress (Shown in GIFs)
-- Worked on UI
+- Worked on UI                                                                        
 <img src='https://i.imgur.com/ne2ZuOx.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /> <br>
 
-- Worked on functionality behind UI
+- Worked on functionality behind UI                                                    
 <img src='https://i.imgur.com/TdAmWxO.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /> <br>
 
 - Worked on and completed functionality behind editing a user profile and saving changes
-<img src='https://i.imgur.com/gkLcou9.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /> <br>
+<img src='https://i.imgur.com/yuOB8kl.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /> <br>
