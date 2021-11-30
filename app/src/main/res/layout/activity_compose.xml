@@ -63,10 +63,71 @@
     <Spinner
         android:id="@+id/publicOrPrivate"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/postPrivacy"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-445dp"
+        android:layout_marginEnd="0dp"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/postPrivacy"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
         android:layout_below="@+id/composeText"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="462dp"
+        android:text="Public or Private Post?" />
+
+    <TextView
+        android:id="@+id/post_category_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/publicOrPrivate"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="364dp"
+        android:text="Category of Post?" />
+
+    <Spinner
+        android:id="@+id/postCategory"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/post_category_TV"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="false"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="17dp"
-        android:spinnerMode="dropdown" />
+        android:layout_marginTop="-345dp"
+        android:layout_marginEnd="0dp" />
+
+    <TextView
+        android:id="@+id/urgency_rating_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_below="@+id/postCategory"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="263dp"
+        android:text="Urgency-Rating" />
+
+    <Spinner
+        android:id="@+id/urgencyRate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/urgency_rating_TV"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-245dp"
+        android:layout_marginEnd="0dp" />
 </RelativeLayout>

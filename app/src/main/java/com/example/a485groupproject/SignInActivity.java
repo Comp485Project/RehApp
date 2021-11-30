@@ -29,10 +29,10 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
 
         username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
+        password = findViewById(R.id.passwordTextField);
         forgotButton = findViewById(R.id.forgotButton);
-        signInButton = findViewById(R.id.btnSignIn);
-        signUpButton = findViewById(R.id.btnSignUp);
+        signInButton = findViewById(R.id.signInButton);
+        signUpButton = findViewById(R.id.signUpButton);
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
