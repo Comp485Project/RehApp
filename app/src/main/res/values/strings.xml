@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">RehApp</string>
+    <string name="sign_in">Sign In</string>
     <string-array name="postOptions">
         <item>Public</item>
         <item>Private</item>
