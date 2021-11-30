@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -43,7 +42,7 @@ public class ComposeActivity extends AppCompatActivity {
         urgencyBox = findViewById(R.id.urgencyRate);
         composeText = findViewById(R.id.composeText);
         profileName = findViewById(R.id.profileName);
-        profilePic = findViewById(R.id.profilePic);
+        profilePic = findViewById(R.id.userPic);
         backButton = findViewById(R.id.backButton);
         postButton = findViewById(R.id.post);
 

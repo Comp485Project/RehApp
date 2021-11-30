@@ -82,7 +82,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void goProfile() {
-        Intent i = new Intent(this, UserProfileActivity.class);
+        Intent i = new Intent(this, HomeActivity.class);
         startActivity(i);
         finish();
     }
