@@ -66,6 +66,7 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void done(ParseUser user, ParseException e) {
                 if (e != null) {
+                    Toast.makeText(getApplicationContext(), "Issue with login", Toast.LENGTH_SHORT).show();
                     Log.e(TAG, "Issue with login", e);
                     return;
                 }
