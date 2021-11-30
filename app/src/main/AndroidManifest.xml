@@ -32,6 +32,7 @@
         </activity>
         -->
         <activity android:name=".HomeActivity"/>
+        <activity android:name=".ComposeActivity"/>
     </application>
 
 </manifest>
