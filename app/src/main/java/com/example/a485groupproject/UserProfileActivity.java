@@ -19,13 +19,20 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserProfileActivity extends AppCompatActivity {
     public static final String TAG = "UserProfileActivity";
 
     private Button editButton;
+    private Button homeButton;
+    private RecyclerView rvPosts;
+    protected PostAdapter postAdapter;
+    protected List<Post> allPosts;
 
 
     @Override
@@ -62,11 +69,41 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
 
+        allPosts = new ArrayList<>();
+        rvPosts = findViewById(R.id.personal_posts);
+        postAdapter = new PostAdapter(this, allPosts);
+        rvPosts.setLayoutManager(new LinearLayoutManager(this));
+        rvPosts.setAdapter(postAdapter);
+        ParseQuery<Post> post_query = ParseQuery.getQuery(Post.class);
+        query.include("user");
+        query.whereEqualTo("user", ParseUser.getCurrentUser());
+        query.addAscendingOrder(Post.CREATED_KEY);
+        post_query.setLimit(20);
+        post_query.findInBackground(new FindCallback<Post>() {
+            @Override
+            public void done(List<Post> posts, ParseException e) {
+                if (e != null) {
+                    Log.e(TAG, "Issue with getting posts", e);
+                    return;
+                }
+                allPosts.addAll(posts);
+                postAdapter.notifyDataSetChanged();
+            }
+        });
+
         editButton = findViewById(R.id.edit_button);
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 editButton();
+            }
+        });
+
+        homeButton = findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goHomeTimeline();
             }
         });
     }
@@ -91,6 +128,12 @@ public class UserProfileActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void goHomeTimeline() {
+        Intent i = new Intent(this, HomeActivity.class);
+        startActivity(i);
+        finish();
     }
 }
 

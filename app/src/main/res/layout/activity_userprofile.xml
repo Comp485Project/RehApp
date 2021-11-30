@@ -8,21 +8,20 @@
     <ImageView
 
         android:id="@+id/profile_picture"
-        android:gravity="center"
-        tools:srcCompat="@tools:sample/avatars"
         android:layout_width="420dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="64dp"
         android:layout_marginBottom="162dp"
         android:elevation="16dp"
+        android:gravity="center"
         app:cardCornerRadius="60dp"
         app:layout_constraintBottom_toTopOf="@+id/plaintext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">>
-
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars">
 
     </ImageView>
 
@@ -80,21 +79,12 @@
         android:layout_marginBottom="33dp"
         android:gravity="center"
         android:text="TextView"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/plaintext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/school"
-        android:textSize="12sp"
         tools:text="Bio will go here....." />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/personal_posts"
-        android:layout_width="409dp"
-        android:layout_height="318dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/edit_button"
@@ -110,6 +100,7 @@
         android:id="@+id/plaintext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginBottom="337dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -118,4 +109,41 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_picture" />
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="6dp"
+        android:text="Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/profileButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/profileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:text="Profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/homeButton"
+        app:layout_constraintTop_toBottomOf="@+id/personal_posts" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/personal_posts"
+        android:layout_width="407dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="349dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="4dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/profileButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

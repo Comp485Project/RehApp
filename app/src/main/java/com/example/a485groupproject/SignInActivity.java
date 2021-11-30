@@ -29,7 +29,7 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
 
         if(ParseUser.getCurrentUser() != null){
-            goProfile();
+            goHomeTimeline();
         }
 
         username = findViewById(R.id.emailTextField);
@@ -75,13 +75,13 @@ public class SignInActivity extends AppCompatActivity {
                     return;
                 }
                 //TODO: navigate to the main activity if the user has signed in properly
-                goProfile();
+                goHomeTimeline();
                 Toast.makeText(SignInActivity.this, "Success!", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void goProfile() {
+    private void goHomeTimeline() {
         Intent i = new Intent(this, HomeActivity.class);
         startActivity(i);
         finish();

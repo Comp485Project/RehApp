@@ -17,6 +17,7 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="Write your thoughts here"
         android:inputType="textMultiLine"
         tools:text="Write you thoughts here" />
 
@@ -53,25 +54,12 @@
         android:text="Back" />
 
     <Button
-        android:id="@+id/post"
+        android:id="@+id/postButton"
         android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:text="Post" />
-
-    <Spinner
-        android:id="@+id/publicOrPrivate"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/postPrivacy"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="-445dp"
-        android:layout_marginEnd="0dp"
-        android:spinnerMode="dropdown"
-        android:contentDescription="Public or Privat post?"/>
 
     <TextView
         android:id="@+id/postPrivacy"
@@ -89,51 +77,146 @@
         android:id="@+id/post_category_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/publicOrPrivate"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="364dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="299dp"
         android:text="Category of Post?" />
-
-    <Spinner
-        android:id="@+id/postCategory"
-        android:layout_width="match_parent"
-        android:contentDescription="What category does this fall under?"
-        android:layout_height="50dp"
-        android:layout_below="@+id/post_category_TV"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="false"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="-345dp"
-        android:layout_marginEnd="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/urgency_rating_TV"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:layout_below="@+id/postCategory"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="9dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="263dp"
-        android:text="Urgency-Rating" />
+        android:layout_marginBottom="137dp"
+        android:text="Urgency-Rating (5=Extremely Urgent)" />
 
-    <Spinner
-        android:id="@+id/urgencyRate"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:contentDescription="Urgency?"
-        android:layout_below="@+id/urgency_rating_TV"
+    <RadioButton
+        android:id="@+id/anxiety"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="337dp"
+        android:text="Anxiety" />
+
+    <RadioButton
+        android:id="@+id/depression"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="336dp"
+        android:layout_toEndOf="@+id/anxiety"
+        android:text="Depression" />
+
+    <RadioButton
+        android:id="@+id/rating1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginBottom="80dp"
+        android:text="1" />
+
+    <RadioButton
+        android:id="@+id/rating2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="80dp"
+        android:text="2" />
+
+    <RadioButton
+        android:id="@+id/rating5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="80dp"
+        android:text="5" />
+
+    <RadioButton
+        android:id="@+id/rating3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="194dp"
+        android:layout_marginBottom="80dp"
+        android:text="3" />
+
+    <RadioButton
+        android:id="@+id/rating4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="236dp"
+        android:layout_marginBottom="80dp"
+        android:text="4" />
+
+    <Switch
+        android:id="@+id/public_private"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="239dp"
+        android:layout_marginEnd="296dp"
+        android:minHeight="48dp"
+        android:text="Public" />
+
+    <RadioButton
+        android:id="@+id/substance_abuse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="-245dp"
-        android:layout_marginEnd="0dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="226dp"
+        android:layout_marginBottom="186dp"
+        android:text="Addiction/Substance Use" />
+
+    <RadioButton
+        android:id="@+id/eating_disorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="338dp"
+        android:layout_toEndOf="@+id/depression"
+        android:text=" Eating Disorder" />
+
+    <RadioButton
+        android:id="@+id/self_harm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="192dp"
+        android:layout_marginBottom="185dp"
+        android:text="Self harm" />
+
+    <RadioButton
+        android:id="@+id/other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rating5"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="56dp"
+        android:text="Other" />
+
 </RelativeLayout>

@@ -65,7 +65,7 @@
         android:layout_margin="10dp"
         android:layout_marginBottom="4dp"
         android:ems="10"
-        android:hint="Mentor or Mentee"
+        android:hint="Student or Expert Title"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/passwordTextField"

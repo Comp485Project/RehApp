@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.parse.FindCallback;
 import com.parse.GetCallback;
@@ -20,22 +22,27 @@ import com.parse.ParseFile;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OtherUserProfileActivity extends AppCompatActivity {
     public static final String TAG = "OtherUserProfile";
-    private Button back_button;
-
+    private Button home_button;
+    private Button profile_button;
+    public static String name = "";
+    private RecyclerView rvPosts;
+    protected PostAdapter postAdapter;
+    protected List<Post> allPosts;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otheruserprofile);
-        String other_user = ""; // TODO
+        String other_user = name;
 
         ParseQuery<Profile> query = ParseQuery.getQuery(Profile.class);
-        query.whereEqualTo("username", other_user);
+        query.whereEqualTo("name", other_user);
         query.setLimit(1);
         query.findInBackground(new FindCallback<Profile>() {
             @Override
@@ -63,19 +70,42 @@ public class OtherUserProfileActivity extends AppCompatActivity {
             }
         });
 
-        back_button = findViewById(R.id.back_button);
-        back_button.setOnClickListener(new View.OnClickListener() {
+        allPosts = new ArrayList<>();
+        rvPosts = findViewById(R.id.personal_posts);
+        postAdapter = new PostAdapter(this, allPosts);
+        rvPosts.setLayoutManager(new LinearLayoutManager(this));
+        rvPosts.setAdapter(postAdapter);
+        ParseQuery<Post> post_query = ParseQuery.getQuery(Post.class);
+        query.include("name");
+        query.whereEqualTo("name", other_user);
+        query.setLimit(20);
+        post_query.findInBackground(new FindCallback<Post>() {
             @Override
-            public void onClick(View view) {
-                backButton();
+            public void done(List<Post> posts, ParseException e) {
+                if (e != null) {
+                    Log.e(TAG, "Issue with getting posts", e);
+                    return;
+                }
+                allPosts.addAll(posts);
+                postAdapter.notifyDataSetChanged();
             }
         });
-    }
 
-    private void backButton() {
-        Intent i = new Intent(this, HomeActivity.class);
-        startActivity(i);
-        finish();
+        profile_button = findViewById(R.id.profileButton);
+        profile_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goProfile();
+            }
+        });
+
+        home_button = findViewById(R.id.homeButton);
+        home_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goHomeTimeline();
+            }
+        });
     }
 
     private void loadImages(ParseFile thumbnail, final ImageView img) {
@@ -92,5 +122,17 @@ public class OtherUserProfileActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void goProfile() {
+        Intent i = new Intent(this, UserProfileActivity.class);
+        startActivity(i);
+        finish();
+    }
+
+    private void goHomeTimeline() {
+        Intent i = new Intent(this, HomeActivity.class);
+        startActivity(i);
+        finish();
     }
 }
