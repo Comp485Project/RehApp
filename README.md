@@ -35,7 +35,7 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
 
 - [ ] Have different university tabs
     * If a group of people go to a specific university, they can see the posts made by those who go to the same university
-- [ ] Allow it to be more customizable
+- [ ] Navigation bar
 
 ### 2. Screen Archetypes
 
@@ -93,12 +93,12 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
 * Notifications
     -> View post after clicking a specific notification
 
-## Wireframes
+## Wireframes (Old version)
 
 <img src="https://i.imgur.com/BzIWWRp.jpg" width=600> <br>
 <img src="https://i.imgur.com/H6Pk5MK.jpg" width=600>
 
-### [BONUS] Digital Wireframes & Mockups
+### [BONUS] Digital Wireframes & Mockups (Newer version)
 
 <img src="./Wireframe/AuthView.png" width=600>
 <br>
