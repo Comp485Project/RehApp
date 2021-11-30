@@ -28,6 +28,10 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
+        if(ParseUser.getCurrentUser() != null){
+            goProfile();
+        }
+
         username = findViewById(R.id.emailTextField);
         password = findViewById(R.id.passwordTextField);
         forgotButton = findViewById(R.id.forgotButton);
@@ -66,6 +70,7 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void done(ParseUser user, ParseException e) {
                 if (e != null) {
+                    Toast.makeText(getApplicationContext(), "Issue with login", Toast.LENGTH_SHORT).show();
                     Log.e(TAG, "Issue with login", e);
                     return;
                 }
