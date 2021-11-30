@@ -5,29 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/view2"
-        android:layout_width="120dp"
-        android:layout_height="0dp"
+    <ImageView
+
+        android:id="@+id/profile_picture"
+        android:gravity="center"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_width="420dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="64dp"
         android:layout_marginBottom="162dp"
         android:elevation="16dp"
-        android:gravity="center"
         app:cardCornerRadius="60dp"
         app:layout_constraintBottom_toTopOf="@+id/plaintext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent">>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/profile_picture"
-            android:gravity="center"
-            tools:srcCompat="@tools:sample/avatars"></ImageView>
-    </androidx.cardview.widget.CardView>
+
+    </ImageView>
+
 
     <TextView
         android:id="@+id/name"
@@ -42,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/profile_picture"
         tools:text="Jerry Thomas" />
 
     <TextView
@@ -119,5 +117,5 @@
         android:text="My Posts"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />\
+        app:layout_constraintTop_toBottomOf="@+id/profile_picture" />
 </androidx.constraintlayout.widget.ConstraintLayout>
