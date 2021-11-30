@@ -10,7 +10,7 @@
         android:id="@+id/signInButton"
         android:layout_width="150dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="52dp"
         android:text="Sign In"
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,8 +23,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/emailTextField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,14 +33,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="48dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/userTypeTextField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -50,28 +48,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="15dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/signUpButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/signUpButton"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_margin="10dp"
-        android:layout_marginTop="44dp"
-        android:text="Sign Up"
-        app:cornerRadius="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
 
     <EditText
         android:id="@+id/userTypeTextField"
@@ -85,14 +70,27 @@
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/passwordTextField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="84dp"
+        android:text="Sign Up"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="70dp"
         android:layout_marginBottom="5dp"
         android:text="Already a Member?"
         app:layout_constraintBottom_toTopOf="@+id/signInButton"
@@ -102,11 +100,14 @@
 
     <Button
         android:id="@+id/selectImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="150dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="70dp"
         android:text="Select Image"
-        app:layout_constraintBottom_toBottomOf="@+id/profileImageView"
-        app:layout_constraintStart_toEndOf="@+id/profileImageView" />
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/emailTextField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileImageView"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
