@@ -6,44 +6,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/userPic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/users_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/post_category"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/userPic"
-        android:textSize="8sp"
-        tools:text="username" />
-
-    <TextView
-        android:id="@+id/post_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/users_id"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/userPic"
-        android:text="TextView" />
-
     <TextView
         android:id="@+id/post_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="11dp"
+        android:textStyle="bold"
+        tools:text="Category" />
+
+    <TextView
+        android:id="@+id/urgency_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/post_author"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="12dp"
+        android:text="Urgency Rating: " />
+
+    <RatingBar
+        android:id="@+id/ratingBar2"
+        style="@android:style/Widget.DeviceDefault.RatingBar.Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/urgency_rating"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="203dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="4" />
+
+    <Button
+        android:id="@+id/post_author"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/post_category"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="14dp"
+        android:text="username"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/post_text"
+        android:layout_width="380dp"
+        android:layout_height="114dp"
+        android:layout_below="@+id/ratingBar2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="12dp"
+        android:text="post_text" />
+
+    <Button
+        android:id="@+id/comments"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/post_text"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="252dp"
         android:layout_marginTop="5dp"
-        android:layout_toEndOf="@+id/userPic"
-        tools:text="category" />
+        android:text="View Comments"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:ignore="TouchTargetSizeCheck" />
+
 </RelativeLayout>

@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -25,10 +27,23 @@ public class HomeActivity extends AppCompatActivity {
     private RecyclerView rvPosts;
     protected PostAdapter postAdapter;
     protected List<Post> allPosts;
+    private Button createPost;
+    private Button profileButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        createPost = findViewById(R.id.create_post);
+        profileButton = findViewById(R.id.profile_button);
+
+        createPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createPost();
+            }
+        });
 
         allPosts = new ArrayList<>();
         rvPosts = findViewById(R.id.rvRehAppPosts);
@@ -36,6 +51,14 @@ public class HomeActivity extends AppCompatActivity {
 
         rvPosts.setLayoutManager(new LinearLayoutManager(this));
         rvPosts.setAdapter(postAdapter);
+        queryPosts();
+
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goProfile();
+            }
+        });
 
     }
 
@@ -59,6 +82,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void queryPosts(){
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
         query.include(Post.KEY_USER);
+        query.whereEqualTo("Privacy", "Public");
         query.setLimit(20);
         query.addDescendingOrder(Post.CREATED_KEY);
 
@@ -73,5 +97,23 @@ public class HomeActivity extends AppCompatActivity {
                 postAdapter.notifyDataSetChanged();
             }
         });
+    }
+
+    private void createPost() {
+        Intent i = new Intent(this, ComposeActivity.class);
+        startActivity(i);
+        finish();
+    }
+
+    private void goProfile() {
+        Intent i = new Intent(this, UserProfileActivity.class);
+        startActivity(i);
+        finish();
+    }
+
+    private void goOtherUserProfile() {
+        Intent i = new Intent(this, OtherUserProfileActivity.class);
+        startActivity(i);
+        finish();
     }
 }

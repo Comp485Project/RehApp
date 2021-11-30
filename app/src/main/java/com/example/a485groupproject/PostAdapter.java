@@ -1,10 +1,13 @@
 package com.example.a485groupproject;
 
 import android.content.Context;
+import android.media.Rating;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -46,25 +49,23 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView userPic;
         TextView postCategory;
-        TextView postUsername;
+        Button postUsername;
         TextView postText;
+        RatingBar ratingBar;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            userPic = itemView.findViewById(R.id.userPic);
             postCategory = itemView.findViewById(R.id.post_category);
-            postUsername = itemView.findViewById(R.id.users_id);
+            postUsername = itemView.findViewById(R.id.post_author);
             postText = itemView.findViewById(R.id.post_text);
+            ratingBar = itemView.findViewById(R.id.ratingBar2);
         }
-        public void bind(Post post){
-            postUsername.setText(post.getKeyUser().getUsername());
-            postCategory.setText(post.getKeyCategory());
+        public void bind(Post post) {
+            postCategory.setText("Category: " + post.getKeyCategory());
+            postUsername.setText(post.getKeyName());
+            ratingBar.setRating(post.getKeyUrgencyRating());
             postText.setText(post.getKeyText());
-            if(userPic != null){
-                Glide.with(context).load(post.getKeyImage().getUrl()).into(userPic);
-            }
-        }
 
+        }
     }
 }
