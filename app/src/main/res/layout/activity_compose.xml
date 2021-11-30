@@ -29,11 +29,11 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="103dp"
         android:layout_marginEnd="1dp"
-        android:layout_toEndOf="@+id/profilePic"
+        android:layout_toEndOf="@+id/userPic"
         tools:text="Username" />
 
     <ImageView
-        android:id="@+id/profilePic"
+        android:id="@+id/userPic"
         android:layout_width="67dp"
         android:layout_height="60dp"
         android:layout_below="@+id/backButton"

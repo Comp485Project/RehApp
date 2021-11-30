@@ -10,6 +10,7 @@
         <entry key="..\:/Users/JRios15_17/COMP485/RehApp/app/src/main/res/layout/activity_signin.xml" value="0.22" />
         <entry key="..\:/Users/JRios15_17/COMP485/RehApp/app/src/main/res/layout/activity_signup.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/JRios15_17/COMP485/RehApp/app/src/main/res/layout/activity_userprofile.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/JRios15_17/COMP485/RehApp/app/src/main/res/layout/item_post.xml" value="0.5" />
         <entry key="..\:/Users/JRios15_17/COMP485/RehApp/app/src/main/res/menu/menu_main.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/chiam/AndroidStudioProjects/485GroupProject/app/src/main/res/layout/activity_editprofile.xml" value="0.18034447821681865" />
         <entry key="..\:/Users/chiam/AndroidStudioProjects/485GroupProject/app/src/main/res/layout/activity_forgotpassword.xml" value="0.18034447821681865" />
@@ -22,7 +23,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
