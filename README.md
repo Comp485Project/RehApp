@@ -26,9 +26,9 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
 
 - [ ] Users can create private and public posts
 - [ ] Users can comments on other posts that they are able to view
-- [ ] Provide a way for the user to edit their profile
-- [ ] Profile pages for each user
-- [ ] User can sign up and logs in to view posts, access previous posts, and view profile info.
+- [x] Provide a way for the user to edit their profile
+- [x] Profile pages for each user
+- [x] User can sign up and logs in to view posts, access previous posts, and view profile info.
 - [ ] Able to store their posts and information as well as being able to access it
 
 **Optional Nice-to-have Stories**
@@ -298,4 +298,7 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
 
 ## Progress (Shown in GIFs)
 - Worked on UI
-<img src='https://i.imgur.com/ne2ZuOx.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/ne2ZuOx.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /> <br>
+
+- Worked on functionality behind UI
+<img src='https://i.imgur.com/TdAmWxO.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /> <br>
