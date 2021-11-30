@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -14,7 +16,7 @@ import android.widget.Toast;
 
 import com.parse.ParseUser;
 
-public class ComposeActivity extends AppCompatActivity {
+public class ComposeActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     private Spinner dropBox;
     private Spinner categoryBox;
@@ -24,12 +26,11 @@ public class ComposeActivity extends AppCompatActivity {
     private TextView profileName;
     private ImageView profilePic;
     private Button backButton;
-    private DropBoxAdapter adapter;     //public or private option
-    private CategoryAdapter categoryAdapter;
-    private UrgencyRatingAdapter urgentAdapter;
+    //private DropBoxAdapter adapter;     //public or private option
+    //private CategoryAdapter categoryAdapter;
+    //private UrgencyRatingAdapter urgentAdapter;
 
-    public ComposeActivity() {
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +47,17 @@ public class ComposeActivity extends AppCompatActivity {
         backButton = findViewById(R.id.backButton);
         postButton = findViewById(R.id.post);
 
-        adapter = new DropBoxAdapter(this);
-        dropBox.setAdapter((SpinnerAdapter) adapter);
+        String[] privacyOptions = getResources().getStringArray(R.array.postOptions);
+        ArrayAdapter privacyAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, privacyOptions);
+        dropBox.setAdapter(privacyAdapter);
 
-        categoryAdapter = new CategoryAdapter(this);
-        categoryBox.setAdapter((SpinnerAdapter) categoryAdapter);
+        String[] categoryOptions = getResources().getStringArray(R.array.category);
+        ArrayAdapter categoryAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categoryOptions);
+        categoryBox.setAdapter(categoryAdapter);
 
-        urgentAdapter = new UrgencyRatingAdapter(this);
-        urgencyBox.setAdapter((SpinnerAdapter) urgentAdapter);
+        String[] urgencyOptions = getResources().getStringArray(R.array.urgency);
+        ArrayAdapter urgencyAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, urgencyOptions);
+        urgencyBox.setAdapter(urgencyAdapter);
 
         profileName.setText(user.getUsername());
         //profilePic.setImageURI();
@@ -73,5 +77,15 @@ public class ComposeActivity extends AppCompatActivity {
 
     private void savePost(String postText, ParseUser user){
         
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

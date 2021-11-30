@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="postOptions">
+        <item>Public</item>
+        <item>Private</item>
+    </string-array>
+    <string-array name="category">
+        <item>Unknown</item>
+        <item>Depression</item>
+        <item>Suicide</item>
+        <item>Burnout</item>
+        <item>Imposter Syndrome</item>
+        <item>Anxiety</item>
+        <item>Drug/Alcohol Use</item>
+        <item>Eating Disorder</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="urgency">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+</resources>
