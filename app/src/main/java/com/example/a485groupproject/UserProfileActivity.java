@@ -75,9 +75,8 @@ public class UserProfileActivity extends AppCompatActivity {
         rvPosts.setLayoutManager(new LinearLayoutManager(this));
         rvPosts.setAdapter(postAdapter);
         ParseQuery<Post> post_query = ParseQuery.getQuery(Post.class);
-        query.include("user");
-        query.whereEqualTo("user", ParseUser.getCurrentUser());
-        query.addAscendingOrder(Post.CREATED_KEY);
+        post_query.include("author");
+        post_query.whereEqualTo("author", ParseUser.getCurrentUser());
         post_query.setLimit(20);
         post_query.findInBackground(new FindCallback<Post>() {
             @Override

@@ -28,9 +28,9 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-        if(ParseUser.getCurrentUser() != null){
+    /*    if(ParseUser.getCurrentUser() != null){
             goHomeTimeline();
-        }
+        } */
 
         username = findViewById(R.id.emailTextField);
         password = findViewById(R.id.passwordTextField);

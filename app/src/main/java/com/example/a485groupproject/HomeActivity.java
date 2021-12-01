@@ -84,7 +84,7 @@ public class HomeActivity extends AppCompatActivity {
         query.include(Post.KEY_USER);
         query.whereEqualTo("Privacy", "Public");
         query.setLimit(20);
-        query.addDescendingOrder(Post.CREATED_KEY);
+        query.addAscendingOrder(Post.CREATED_KEY);
 
         query.findInBackground(new FindCallback<Post>() {
             @Override
