@@ -24,18 +24,18 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
 
 **Required Must-have Stories**
 
-- [ ] Users can create private and public posts
-- [ ] Users can comments on other posts that they are able to view
+- [x] Users can create private and public posts
+- [x] Navigation Bar/Buttons
 - [x] Provide a way for the user to edit their profile
 - [x] Profile pages for each user
 - [x] User can sign up and logs in to view posts, access previous posts, and view profile info.
-- [ ] Able to store their posts and information as well as being able to access it
+- [x] Able to store their posts and information as well as being able to access it
 
 **Optional Nice-to-have Stories**
 
 - [ ] Have different university tabs
     * If a group of people go to a specific university, they can see the posts made by those who go to the same university
-- [ ] Navigation bar
+- [ ] Users can comments on other posts that they are able to view
 
 ### 2. Screen Archetypes
 
@@ -305,3 +305,5 @@ RehApp (pronounced like Rehab) is an application where students may voice their 
 
 - Worked on and completed functionality behind editing a user profile and saving changes
 <img src='https://i.imgur.com/yuOB8kl.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /> <br>
+- Finished required app functionality. Will continue working on UI and stretch goals     
+<img src='https://i.imgur.com/5CNxssl.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' /> <br>
